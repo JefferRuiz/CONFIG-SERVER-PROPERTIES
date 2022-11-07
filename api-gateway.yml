@@ -18,8 +18,8 @@ spring:
           - Path=/parameter/**
         filters:
           - CircuitBreaker=parameter
-      - id: ms-person
-        uri: lb://ms-person
+      - id: prod_local_prueba_conexion
+        uri: lb://prod_local_prueba_conexion
         predicates:
           - Path=/api/**
       - id: ms-client
