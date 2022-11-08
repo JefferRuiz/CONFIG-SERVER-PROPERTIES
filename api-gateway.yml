@@ -21,11 +21,11 @@ spring:
       - id: ms-prod_local_prueba_conexion
         uri: lb://ms-prod_local_prueba_conexion
         predicates:
-          - Path=/api/**
+          - Path=/**
       - id: ms-client
         uri: lb://ms-client
         predicates:
-          - Path=/api/**
+          - Path=/**
 
 resilience4j:
   circuitbreaker:
