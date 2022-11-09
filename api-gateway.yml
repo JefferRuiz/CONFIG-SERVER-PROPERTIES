@@ -12,20 +12,20 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: ms-parameter
-        uri: lb://ms-parameter
+      - id: ms-local
+        uri: lb://ms-local
         predicates:
-          - Path=/parameter/**
+          - Path=/api/**
         filters:
           - CircuitBreaker=parameter
       - id: ms-prod_local_prueba_conexion
         uri: lb://ms-prod_local_prueba_conexion
         predicates:
-          - Path=/**
+          - Path=/api/**
       - id: ms-client
         uri: lb://ms-client
         predicates:
-          - Path=/**
+          - Path=/api/**
 
 resilience4j:
   circuitbreaker:
